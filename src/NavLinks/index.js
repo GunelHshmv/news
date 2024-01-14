@@ -16,7 +16,5 @@ const NavLinks = () => {
                 ))}
          </Box>
         </Box>
-   
- 
 }
 export default NavLinks;
