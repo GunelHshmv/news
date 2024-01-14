@@ -3,8 +3,8 @@ import CategorialNews from '../Pages/CategorialNews';
 const Routing = () => {
     return <div>
         <Routes>
-            <Route path='/category' element={<CategorialNews/>} />
-            <Route path='/category/:title' element={<CategorialNews/>} />
+            <Route path='/news/category' element={<CategorialNews/>} />
+            <Route path='/news/category/:title' element={<CategorialNews/>} />
         </Routes>
     </div>;
 }
