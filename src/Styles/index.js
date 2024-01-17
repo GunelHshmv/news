@@ -64,10 +64,11 @@ const styles = {
       display: "flex",
       flexDirection: "row",
       gap: "8px",
+
     },
     iconsStyle: {
       display: "flex",
-      alignItems:"center"
+      alignItems:"center",
     },
     divider:{
       width:"60%",

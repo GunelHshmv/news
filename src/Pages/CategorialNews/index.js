@@ -47,10 +47,12 @@ const CategorialNews = () => {
       </CardActionArea>
       <CardActions style={styles.cardactionStyles}>
         <div style={styles.cardIcpnsStyles} >
-          <div style={styles.iconsStyle}><AccessTimeIcon /> {
-            format(parse(item.date, 'EEEE, d MMMM, yyyy', new Date()), 'dd MMM yyyy')}
+          <div style={styles.iconsStyle}><AccessTimeIcon />
+            <span style={{paddingLeft:"4px"}}> {format(parse(item.date, 'EEEE, d MMMM, yyyy', new Date()), 'dd MMM yyyy')}</span>
             </div>
-          <div style={styles.iconsStyle}><PersonOutlineIcon/> {item.author}</div>
+          <div style={styles.iconsStyle}><PersonOutlineIcon/> 
+          <span style={{paddingLeft:"4px"}}>{item.author}</span>
+          </div>
         </div>
       </CardActions>
     </Card>
