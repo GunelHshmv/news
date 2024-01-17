@@ -1,8 +1,4 @@
-import { createContext } from "react";
-export const styleContext = createContext();
-
-const StyleProvider = ({ children }) => {
-  const styles = {
+const styles = {
     buttons: {
       backgroundColor: "white",
       color: "black",
@@ -10,7 +6,6 @@ const StyleProvider = ({ children }) => {
       fontWeight: "bold",
       textTransform: "none",
       height: "48px",
-      
     },
     bgImageStyle: {
       display: "flex",
@@ -35,7 +30,9 @@ const StyleProvider = ({ children }) => {
     },
     cotegoriesStyles: {
       width: "98%",
-      display: "flex",
+      display:"flex",
+      alignItems:"center",
+      justifyContent:"center",
       gridTemplateColumns: "repeat(10, 460px)",
     },
     pageContainerStyle: {
@@ -72,10 +69,9 @@ const StyleProvider = ({ children }) => {
       display: "flex",
       alignItems:"center"
     },
+    divider:{
+      width:"60%",
+    }
   };
 
-  return (
-    <styleContext.Provider value={{ styles }}>{children}</styleContext.Provider>
-  );
-};
-export default StyleProvider;
+  export default styles;

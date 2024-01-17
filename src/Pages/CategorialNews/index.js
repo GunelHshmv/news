@@ -9,9 +9,11 @@ import Typography from '@mui/material/Typography';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import { CardActionArea, CardActions } from '@mui/material';
-import { styleContext } from '../../ContextData/styleContext';
+import Divider from '@mui/material/Divider';
+import { format, parse} from 'date-fns';
+import styles from '../../Styles'
+
 const CategorialNews = () => {
-  const {styles}=useContext(styleContext)
     const [news,setNews]=useState([])
     const {title}=useParams()
     useEffect(() => {
@@ -30,21 +32,24 @@ const CategorialNews = () => {
         style={styles.cardMediaStyle}
           component="img"
           height="240"
-          image={item.imageUrl          }
+          image={item.imageUrl}
           alt="green iguana"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
             {item.title}
           </Typography>
-          <Typography variant="body2" color="text.secondary">
+          <Divider style={styles.divider} />
+          <Typography variant="body2" color="text.secondary" paddingTop={"10px"} >
             {item.content}
           </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions style={styles.cardactionStyles}>
         <div style={styles.cardIcpnsStyles} >
-          <div style={styles.iconsStyle}><AccessTimeIcon/> {item.date}</div>
+          <div style={styles.iconsStyle}><AccessTimeIcon /> {
+            format(parse(item.date, 'EEEE, d MMMM, yyyy', new Date()), 'dd MMM yyyy')}
+            </div>
           <div style={styles.iconsStyle}><PersonOutlineIcon/> {item.author}</div>
         </div>
       </CardActions>
@@ -53,5 +58,6 @@ const CategorialNews = () => {
 </div>
     </PageContainer>
 }
+
 
 export default CategorialNews;

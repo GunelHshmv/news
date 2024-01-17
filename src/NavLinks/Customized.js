@@ -1,9 +1,8 @@
 import { Button } from '@mui/material';
-import React, { useContext } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { styleContext } from '../ContextData/styleContext';
+import styles from '../Styles'
 const Customized = ({to,text}) => {
-    const {styles}=useContext(styleContext)
     return <div>
         <NavLink to={to} >
             <Button variant="contained" style={styles.buttons}>{text}</Button>

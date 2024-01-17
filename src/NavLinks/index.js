@@ -1,10 +1,10 @@
-import React, { useContext, useState } from 'react';
+import React, {  useState } from 'react';
 import Customized from './Customized';
 import {Box, Button} from '@mui/material'
-import { styleContext } from '../ContextData/styleContext';
+import styles from '../Styles'
+
 const NavLinks = () => {
     const [manual,setManual]=useState(['all', "business","sports","world","technology",'entertainment','science','national','hatke','politics',"automobile","miscellaneous","startup"])
-    const {styles}=useContext(styleContext)
     return <Box style={styles.bgImageStyle}>
        <h1 style={styles.h1Styles}>News</h1>
             <Box style={styles.cotegoriesStyles}>
