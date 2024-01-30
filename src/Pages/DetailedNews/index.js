@@ -18,7 +18,7 @@ const DetailedNews = () => {
     const [news,setNews]=useState([])
   const selectedItem = news.find((item, idx) => idx === parseInt(index));
   useEffect(() => {
-        axios.get(title ? `https://inshortsapi.vercel.app/news?category=${title}` : 'https://inshortsapi.vercel.app/news?category=all')
+        axios.get(title ? `https://inshortsapi.vercel.app/news?category=${title}`:'https://inshortsapi.vercel.app/news?category=all')
             .then(({ data }) => {
                 setNews(data.data);
             })
@@ -75,8 +75,10 @@ const DetailedNews = () => {
         <Box style={styles.simGap}>
            {
            similiarNews.map((item,index)=>(
-            <Link  to={`/news/category/${title}/${index+firstValue}`}>
-              <Card style={styles.cardStyleSim} >
+            <Link  to={title?`/news/category/${title}/${index+firstValue}`:`/news/category/all/${index+firstValue}`}>
+         
+
+  <Card style={styles.cardStyleSim} >
       <CardActionArea>
            <Box  sx={{
             '&:before':{

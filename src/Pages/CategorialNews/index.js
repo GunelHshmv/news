@@ -27,7 +27,7 @@ const CategorialNews = () => {
       <div style={styles.pageContainerStyle}>
       {
       news.map((item,index)=>(
-    <Link to={`/news/category/${title}/${index}`}>
+    <Link to={title?`/news/category/${title}/${index}`:`/news/category/all/${index}`}>
     <Card style={styles.cardStyle} >
       <CardActionArea>
         <CardMedia
