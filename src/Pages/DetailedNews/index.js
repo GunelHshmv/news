@@ -81,10 +81,10 @@ const DetailedNews = () => {
            <Box  sx={{
             '&:before':{
               content: '""',
-              width:"280px",
+              width:"600px",
               height:"180px",
               position:"absolute",
-              background:'rgba(0, 0, 0, 0.5)',
+              background:'rgba(65, 71, 98, 0.7)',
             },
             '&:hover': {
               opacity: "0.1", 
@@ -108,7 +108,7 @@ const DetailedNews = () => {
         <CardMedia
         style={styles.cardMediaStyle}
           component="img"
-          sx={{ width: 280 }}
+          sx={{ width: 330 }}
           height="190"
           image={item.imageUrl}
           alt="green iguana"

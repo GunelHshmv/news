@@ -77,7 +77,7 @@ const styles = {
       width:"60%",
     },
     cardStyleDetailed:{
-      maxWidth: 870,
+      maxWidth: 1000,
       borderRadius: "10px",
       height: "390px",
       position: "relative",
@@ -104,6 +104,7 @@ const styles = {
       display:"flex"
     },
     cardStyleSim:{
+      width:"330px",
    height:"180px"
     },
     cardactionStylesSim: {
@@ -114,7 +115,7 @@ const styles = {
      display:"flex",marginTop:"360px",flexDirection:"column"
     },
     simGap:{
-      display:"flex",flexDirection:"row",gap:"20px"
+      display:"flex",flexDirection:"row",gap:"14px"
     },
     simTextBox:{
       color:"white",zIndex:1,position:"absolute",marginTop:"50px"
