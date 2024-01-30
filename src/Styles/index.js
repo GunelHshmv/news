@@ -1,3 +1,5 @@
+import { red } from "@mui/material/colors";
+
 const styles = {
     buttons: {
       backgroundColor: "white",
@@ -56,6 +58,7 @@ const styles = {
     cardMediaStyle: {
       borderRadius: "10px",
     },
+
     cardactionStyles: {
       position: "absolute",
       top: "540px",
@@ -72,6 +75,52 @@ const styles = {
     },
     divider:{
       width:"60%",
+    },
+    cardStyleDetailed:{
+      maxWidth: 870,
+      borderRadius: "10px",
+      height: "390px",
+      position: "relative",
+      display:"flex",
+      flexDirection:"row",
+      backgroundColor:"white",
+    },  
+    cardMediaStyleDetailed: {
+      margin:"20px",
+    borderRadius: "10px",
+    },
+    cardactionStylesDetailed: {
+      position: "absolute",
+      top: "340px",
+      margin:"10px",
+    },  
+      mainDetailedCon:{
+      display:"flex",flexDirection:"column",alignItems:"center"
+    },
+    firstBoxDetailed:{
+      display:"flex"
+    },
+   secondBoxDetailed:{
+      display:"flex"
+    },
+    cardStyleSim:{
+   height:"180px"
+    },
+    cardactionStylesSim: {
+      position: "absolute",
+      top: "90px",
+    },
+    mainSim:{
+     display:"flex",marginTop:"360px",flexDirection:"column"
+    },
+    simGap:{
+      display:"flex",flexDirection:"row",gap:"20px"
+    },
+    simTextBox:{
+      color:"white",zIndex:1,position:"absolute",marginTop:"50px"
+    },
+    simText:{
+      marginLeft:"10px"
     }
   };
 

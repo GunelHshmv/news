@@ -9,8 +9,8 @@ const NavLinks = () => {
        <h1 style={styles.h1Styles}>News</h1>
             <Box style={styles.cotegoriesStyles}>
                 {
-                 manual.map((item)=>(
-                <Button >
+                 manual.map((item,index)=>(
+                <Button key={index} >
                 <Customized to={`/news/category/${item}`} text={item.charAt(0).toUpperCase() + item.slice(1)} />
                 </Button>
                 ))}

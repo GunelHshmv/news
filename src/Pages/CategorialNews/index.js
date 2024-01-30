@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import PageContainer from '../../PageContainer';
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
@@ -20,12 +20,14 @@ const CategorialNews = () => {
       axios.get(title?`https://inshortsapi.vercel.app/news?category=${title}`:'https://inshortsapi.vercel.app/news?category=all')
         .then(({data})=>{
             setNews(data.data)
+            // console.log(news)
         })
     }, [title])
     return <PageContainer>
       <div style={styles.pageContainerStyle}>
       {
-      news.map((item)=>(
+      news.map((item,index)=>(
+    <Link to={`/news/category/${title}/${index}`}>
     <Card style={styles.cardStyle} >
       <CardActionArea>
         <CardMedia
@@ -56,6 +58,7 @@ const CategorialNews = () => {
         </div>
       </CardActions>
     </Card>
+    </Link>
     ))}
 </div>
     </PageContainer>
