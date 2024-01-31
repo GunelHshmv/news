@@ -6,7 +6,7 @@ const Routing = () => {
     useEffect(() => {
         const currentPath = window.location.pathname;
 
-        if (currentPath === "gunelhshmv.github.io/news/") {
+        if (currentPath === "/news/") {
             window.location.replace("/all"); 
         }
     }, []);
