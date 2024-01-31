@@ -5,13 +5,13 @@ import DetailedNews from '../Pages/DetailedNews';
 import { useNavigate } from 'react-router-dom';
 
 const Routing = () => {
-    const navigate = useNavigate(); // useNavigate hook'unu burada kullanın
+    // const navigate = useNavigate(); 
 
-    useEffect(() => {
-        if (window.location.pathname.includes('/news/')) {
-            navigate('/all');
-        }
-    }, [navigate]);
+    // useEffect(() => {
+    //     if (window.location.pathname.includes('/news/')) {
+    //         navigate('/all');
+    //     }
+    // }, [navigate]);
 
     return (
         <div>
@@ -19,7 +19,7 @@ const Routing = () => {
                 <Route path='/all' element={<CategorialNews />} />
                 <Route path='/:title' element={<CategorialNews/>} />
                 <Route path='/:title/:index' element={<DetailedNews/>} />
-                {/* <Route path='/news/' element={<Navigate to="/all" />} /> */}
+                {<Route path='/news/' element={<Navigate to="/all" />} /> 
             </Routes>
         </div>
     );
