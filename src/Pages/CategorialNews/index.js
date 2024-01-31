@@ -12,22 +12,24 @@ import { CardActionArea, CardActions } from '@mui/material';
 import Divider from '@mui/material/Divider';
 import { format, parse} from 'date-fns';
 import styles from '../../Styles'
+import newsContext, { NewsProvider } from '../../ContextData/newsContext';
 
 const CategorialNews = () => {
-    const [news,setNews]=useState([])
     const {title}=useParams()
+  
+    const {news,setTitle}=useContext(newsContext)
+
+
     useEffect(() => {
-      axios.get(title?`https://inshortsapi.vercel.app/news?category=${title}`:'https://inshortsapi.vercel.app/news?category=all')
-        .then(({data})=>{
-            setNews(data.data)
-            // console.log(news)
-        })
-    }, [title])
-    return <PageContainer>
+        setTitle(title);
+    }, [title, setTitle]);
+    console.log(news)
+    return (
+        <PageContainer>
       <div style={styles.pageContainerStyle}>
       {
       news.map((item,index)=>(
-    <Link to={title?`/news/category/${title}/${index}`:`/news/category/all/${index}`}>
+    <Link to={title?`/${title}/${index}`:`/all/${index}`}>
     <Card style={styles.cardStyle} >
       <CardActionArea>
         <CardMedia
@@ -62,6 +64,8 @@ const CategorialNews = () => {
     ))}
 </div>
     </PageContainer>
+    )
+
 }
 
 

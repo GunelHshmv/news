@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link,useParams } from 'react-router-dom';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -11,22 +11,12 @@ import Divider from '@mui/material/Divider';
 import { format, parse} from 'date-fns';
 import styles from '../../Styles'
 import PageContainer from '../../PageContainer';
-import axios from 'axios';
+import newsContext from '../../ContextData/newsContext';
 
 const DetailedNews = () => {
     const {index,title}=useParams()
-    const [news,setNews]=useState([])
+    const {news,setNews}=useContext(newsContext)
   const selectedItem = news.find((item, idx) => idx === parseInt(index));
-  useEffect(() => {
-        axios.get(title ? `https://inshortsapi.vercel.app/news?category=${title}`:'https://inshortsapi.vercel.app/news?category=all')
-            .then(({ data }) => {
-                setNews(data.data);
-            })
-            .catch(error => {
-                console.error('Error fetching news:', error);
-            });
-            
-    }, [index, title]);
     let firstValue=Math.floor(Math.random()*7)
     let similiarNews=news.slice(firstValue,firstValue+3)
     return (
@@ -75,7 +65,7 @@ const DetailedNews = () => {
         <Box style={styles.simGap}>
            {
            similiarNews.map((item,index)=>(
-            <Link  to={title?`/news/category/${title}/${index+firstValue}`:`/news/category/all/${index+firstValue}`}>
+            <Link  to={title?`/${title}/${index+firstValue}`:`/all/${index+firstValue}`}>
          
 
   <Card style={styles.cardStyleSim} >
