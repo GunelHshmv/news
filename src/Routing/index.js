@@ -15,7 +15,7 @@ const Routing = () => {
             <Route path='/' exact element={<CategorialNews />} />
             <Route path='/:title' element={<CategorialNews/>}/>
             <Route path='/:title/:index' element={<DetailedNews/>} />
-            <Route path='/news' element={<Navigate to="/all" />} />
+            <Route path='/news/' element={<Navigate to="/all" />} />
         </Routes>
     </div>;
 }
