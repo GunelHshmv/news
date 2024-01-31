@@ -10,14 +10,14 @@ const Routing = () => {
         //     window.location.replace("/"); 
         // }
         if (window.location.pathname.includes('/news')) {
-    const newUrl = window.location.href.replace('/news', '/');
+    const newUrl = window.location.href.replace('/news', '/all');
     window.location.href = newUrl;
 }
 
     }, []);
     return <div>
         <Routes>
-            <Route path='/' exact element={<CategorialNews />} />
+            <Route path='/all' exact element={<CategorialNews />} />
             <Route path='/:title' element={<CategorialNews/>}/>
             <Route path='/:title/:index' element={<DetailedNews/>} />
             // <Route path='/news/' element={<Navigate to="/all" />} />
