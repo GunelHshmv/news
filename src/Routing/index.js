@@ -6,13 +6,13 @@ const Routing = () => {
     useEffect(() => {
         const currentPath = window.location.pathname;
 
-        if (currentPath === "/news/") {
-            window.location.replace("/"); 
+        if (currentPath === "/news") {
+            window.location.replace("/all"); 
         }
     }, []);
     return <div>
         <Routes>
-            <Route path='/' exact element={<CategorialNews />} />
+            <Route path='/all' exact element={<CategorialNews />} />
             <Route path='/:title' element={<CategorialNews/>}/>
             <Route path='/:title/:index' element={<DetailedNews/>} />
         </Routes>
