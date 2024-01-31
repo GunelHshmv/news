@@ -9,8 +9,8 @@ const Routing = () => {
         // if (currentPath === "/news/") {
         //     window.location.replace("/"); 
         // }
-        if (window.location.pathname.includes('/news')) {
-    const newUrl = window.location.href.replace('/news', '/all');
+        if (window.location.pathname.includes('/news/')) {
+    const newUrl = window.location.href.replace('/news/', '/all');
     window.location.href = newUrl;
 }
 
