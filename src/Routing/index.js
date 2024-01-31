@@ -4,11 +4,16 @@ import DetailedNews from '../Pages/DetailedNews';
 import { useEffect } from 'react';
 const Routing = () => {
     useEffect(() => {
-        const currentPath = window.location.pathname;
+        // const currentPath = window.location.pathname;
 
-        if (currentPath === "/news/") {
-            window.location.replace("/"); 
-        }
+        // if (currentPath === "/news/") {
+        //     window.location.replace("/"); 
+        // }
+        if (window.location.pathname.includes('/news')) {
+    const newUrl = window.location.href.replace('/news', '/');
+    window.location.href = newUrl;
+}
+
     }, []);
     return <div>
         <Routes>
