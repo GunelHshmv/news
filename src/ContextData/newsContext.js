@@ -1,3 +1,4 @@
+
 import React, { createContext, useEffect, useState } from 'react';
 import axios from 'axios';
 
@@ -12,6 +13,7 @@ export const NewsProvider = ({ children }) => {
             try {
                 const response = await axios.get(title ? `https://inshortsapi.vercel.app/news?category=${title}` : 'https://inshortsapi.vercel.app/news?category=all');
                 setNews(response.data.data);
+                console.log(title)
             } catch (error) {
                 console.error('Error fetching news:', error);
             }

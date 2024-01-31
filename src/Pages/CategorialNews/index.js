@@ -16,12 +16,9 @@ import newsContext, { NewsProvider } from '../../ContextData/newsContext';
 
 const CategorialNews = () => {
     const {title}=useParams()
-  
     const {news,setTitle}=useContext(newsContext)
-
-
     useEffect(() => {
-        setTitle(title);
+          setTitle(title);
     }, [title, setTitle]);
     console.log(news)
     return (
