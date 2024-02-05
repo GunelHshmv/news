@@ -1,18 +1,19 @@
 import React, { useEffect } from 'react';
-import { Route, Routes, Navigate } from 'react-router-dom';
+import { Route, Routes, useNavigate } from 'react-router-dom';
 import CategorialNews from '../Pages/CategorialNews';
 import DetailedNews from '../Pages/DetailedNews';
 import { useLocation } from 'react-router-dom';
 
 const Routing = () => {
     const location = useLocation();
+    const navigate = useNavigate();
 
     useEffect(() => {
         // Eğer /news rotası açıldığında /all rotasına yönlendirme yap
-        if (location.pathname.includes('/news')) {
-            return <Navigate to="/all" replace />;
+        if (location.pathname.includes('/news/')) {
+            navigate('/all');
         }
-    }, [location]);
+    }, [location, navigate]);
 
     return (
         <div>
