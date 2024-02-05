@@ -8,7 +8,7 @@ const Routing = () => {
     const location = useLocation();
 
     useEffect(() => {
-        if (location.pathname.startsWith('/news/')) {
+        if (location.pathname.startsWith('/news')) {
             Navigate('/all');
         }
     }, [location]);
