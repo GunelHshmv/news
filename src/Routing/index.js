@@ -5,21 +5,12 @@ import DetailedNews from '../Pages/DetailedNews';
 import { useLocation } from 'react-router-dom';
 
 const Routing = () => {
-    const location = useLocation();
-
-    useEffect(() => {
-        if (location.pathname === '/news/') {
-            Navigate('/all');
-        }
-    }, [location]);
-
     return (
         <div>
             <Routes>
-                <Route path='/all' element={<CategorialNews />} />
+            <Route path='/news/*' element={<Navigate to="/all" replace />} />
                 <Route path='/:title' element={<CategorialNews />} />
                 <Route path='/:title/:index' element={<DetailedNews />} />
-                <Route path='/news/' element={<Navigate to="/all" />} />
             </Routes>
         </div>
     );
