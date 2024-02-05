@@ -1,23 +1,28 @@
-import {   Navigate, Route, Routes } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Route, Routes, Navigate } from 'react-router-dom';
 import CategorialNews from '../Pages/CategorialNews';
 import DetailedNews from '../Pages/DetailedNews';
-import { useEffect } from 'react';
-const Routing = () => {
-    // useEffect(() => {
-    //     const currentPath = window.location.pathname;
+import { useLocation } from 'react-router-dom';
 
-    //     if (currentPath === "/news") {
-    //         window.location.replace("/"); 
-    //     }
-    // }, []);
-    return <div>
-        <Routes>
-            <Route path='/' exact element={<CategorialNews />} />
-            <Route path='/:title' element={<CategorialNews/>}/>
-            <Route path='/:title/:index' element={<DetailedNews/>} />
-            <Route path='/news' element={<Navigate to="/all" />} />
-        </Routes>
-    </div>;
+const Routing = () => {
+    const location = useLocation();
+
+    useEffect(() => {
+        if (location.pathname === '/news/') {
+            Navigate('/all');
+        }
+    }, [location]);
+
+    return (
+        <div>
+            <Routes>
+                <Route path='/all' element={<CategorialNews />} />
+                <Route path='/:title' element={<CategorialNews />} />
+                <Route path='/:title/:index' element={<DetailedNews />} />
+                <Route path='/news/' element={<Navigate to="/all" />} />
+            </Routes>
+        </div>
+    );
 }
 
 export default Routing;
