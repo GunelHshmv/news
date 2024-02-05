@@ -5,13 +5,7 @@ import DetailedNews from '../Pages/DetailedNews';
 import { useNavigate } from 'react-router-dom';
 
 const Routing = () => {
-    const navigate = useNavigate(); // useNavigate hook'unu burada kullanın
-
-    useEffect(() => {
-        if (window.location.pathname.includes('/news/')) {
-            navigate('/all');
-        }
-    }, [navigate]);
+    const navigate = useNavigate(); 
 
     return (
         <div>
