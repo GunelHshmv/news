@@ -8,11 +8,11 @@ const Routing = () => {
     const location = useLocation();
 
     useEffect(() => {
+        // Eğer /news rotası açıldığında /all rotasına yönlendirme yap
         if (location.pathname.startsWith('/news')) {
-            Navigate('/all');
+            return <Navigate to="/all" replace />;
         }
     }, [location]);
-
 
     return (
         <div>
