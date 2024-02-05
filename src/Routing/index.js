@@ -8,7 +8,7 @@ const Routing = () => {
     return (
         <div>
             <Routes>
-            <Route exact  path="/" element={<CategorialNews />} />
+            <Route exact  path="/all" element={<CategorialNews />} />
                 <Route path='/:title' element={<CategorialNews/>} />
                 <Route path='/:title/:index' element={<DetailedNews/>} />
             </Routes>

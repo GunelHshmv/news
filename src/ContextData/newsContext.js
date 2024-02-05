@@ -20,7 +20,7 @@ export const NewsProvider = ({ children }) => {
 
         fetchData();
 
-        window.history.replaceState(null, '', '/');
+        window.history.replaceState(null, '', '/all');
     }, []);
 
     useEffect(() => {
