@@ -9,7 +9,7 @@ const Routing = () => {
 
     useEffect(() => {
         // Eğer /news rotası açıldığında /all rotasına yönlendirme yap
-        if (location.pathname.startsWith('/news')) {
+        if (location.pathname.includes('/news')) {
             return <Navigate to="/all" replace />;
         }
     }, [location]);
