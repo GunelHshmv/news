@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Route, Routes, Navigate } from 'react-router-dom'; // Navigate ekledik
+import { Route, Routes,  } from 'react-router-dom'; 
 import CategorialNews from '../Pages/CategorialNews';
 import DetailedNews from '../Pages/DetailedNews';
 
