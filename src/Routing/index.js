@@ -9,7 +9,7 @@ const Routing = () => {
 
     useEffect(() => {
         if (location.pathname === '/news/') {
-            navigate('/all');
+            Navigate('/all');
         }
     }, [location]);
 
