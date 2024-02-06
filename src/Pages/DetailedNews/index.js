@@ -65,7 +65,7 @@ const DetailedNews = () => {
         <Box style={styles.simGap}>
            {
            similiarNews.map((item,index)=>(
-            <Link  to={title?`/${title}/${index+firstValue}`:`/all/${index+firstValue}`}>
+            <Link  to={title?`/news/${title}/${index+firstValue}`:`/news/all/${index+firstValue}`}>
          
 
   <Card style={styles.cardStyleSim} >

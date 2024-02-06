@@ -11,7 +11,7 @@ const NavLinks = () => {
                 {
                  manual.map((item,index)=>(
                 <Button key={index} >
-                <Customized to={`/${item}`} text={item.charAt(0).toUpperCase() + item.slice(1)} />
+                <Customized to={`/news/${item}`} text={item.charAt(0).toUpperCase() + item.slice(1)} />
                 </Button>
                 ))}
          </Box>
