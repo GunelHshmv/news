@@ -1,7 +1,7 @@
 import { Button } from '@mui/material';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import styles from '../../Styles'
+import styles from '../../../Styles'
 const Customized = ({to,text}) => {
     return <div>
         <NavLink to={to} >
