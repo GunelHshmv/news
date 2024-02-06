@@ -11,7 +11,7 @@ import { CardActionArea, CardActions } from '@mui/material';
 import Divider from '@mui/material/Divider';
 import { format, parse} from 'date-fns';
 import styles from '../../Styles'
-import newsContext, { NewsProvider } from '../../ContextData/newsContext';
+import newsContext, { NewsProvider } from '../../ContextData';
 
 const CategorialNews = () => {
     const {title}=useParams()

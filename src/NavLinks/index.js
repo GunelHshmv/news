@@ -1,5 +1,5 @@
 import React, {  useContext, useState } from 'react';
-import Customized from './Customized/Customized/Customized';
+import Customized from './Customized/Customized';
 import {Box, Button} from '@mui/material'
 import styles from '../Styles'
 
