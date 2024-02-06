@@ -11,7 +11,7 @@ import Divider from '@mui/material/Divider';
 import { format, parse} from 'date-fns';
 import styles from '../../Styles'
 import PageContainer from '../../PageContainer';
-import newsContext from '../../ContextData/newsContext';
+import newsContext from '../../ContextData';
 
 const DetailedNews = () => {
     const {index,title}=useParams()
