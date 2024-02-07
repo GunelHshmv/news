@@ -15,7 +15,7 @@ import newsContext from '../../ContextData';
 
 const DetailedNews = () => {
     const {index,title}=useParams()
-    const {news,setNews}=useContext(newsContext)
+    const {news}=useContext(newsContext)
   const selectedItem = news.find((item, idx) => idx === parseInt(index));
     let firstValue=Math.floor(Math.random()*7)
     let similiarNews=news.slice(firstValue,firstValue+3)
