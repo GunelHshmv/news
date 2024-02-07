@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import PageContainer from '../../PageContainer';
 import { Link, useParams } from 'react-router-dom';
 import Card from '@mui/material/Card';
@@ -12,14 +12,30 @@ import Divider from '@mui/material/Divider';
 import { format, parse} from 'date-fns';
 import styles from '../../Styles'
 import newsContext  from '../../ContextData';
+import axios from 'axios';
 
 const CategorialNews = () => {
-    const {title}=useParams()
-    const {news,setTitle}=useContext(newsContext)
-    useEffect(() => {
-          setTitle(title);
-    }, [title, setTitle]);
-    console.log(news)
+  const [news, setNews] = useState([]);
+  const {title}=useParams()
+
+  useEffect(() => {
+      const fetchData = async () => {
+          try {
+              const response = await axios.get(title ? `https://inshortsapi.vercel.app/news?category=${title}` : 'https://inshortsapi.vercel.app/news?category=all');
+              setNews(response.data.data);
+          } catch (error) {
+              console.error('Error fetching news:', error);
+          }
+      };
+
+      fetchData();
+  }, [title]);
+    // const {news,setTitle}=useContext(newsContext)
+    // useEffect(() => {
+    //       setTitle(title);
+    // }, [title, setTitle]);
+    // console.log(news)
+  
     return (
         <PageContainer>
       <div style={styles.pageContainerStyle}>
