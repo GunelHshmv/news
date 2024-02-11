@@ -17,9 +17,7 @@ export const NewsProvider = ({ children }) => {
             }
         };
 
-        if (title) {
             fetchData();
-        }
     }, [title]);
     const contextValue = { news, setNews };
     return <NewsContext.Provider value={contextValue}>{children}</NewsContext.Provider>; // newsContext yerine NewsContext kullanın
