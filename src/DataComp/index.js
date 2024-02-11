@@ -1,9 +1,12 @@
 import React, { createContext, useEffect, useState } from 'react';
-import axios from 'axios';
-import { useParams } from 'react-router-dom';
 
-const NewsContext = createContext(); 
-export const NewsProvider = ({ children }) => {
+import { useParams } from 'react-router-dom';
+import CategorialNews from '../Pages/CategorialNews';
+import DetailedNews from '../Pages/DetailedNews';
+import PageContainer from '../PageContainer';
+import axios from 'axios';
+
+const DataComp = () => {
     const [news, setNews] = useState([]);
     const { title } = useParams();
 
@@ -12,17 +15,21 @@ export const NewsProvider = ({ children }) => {
             try {
                 const response = await axios.get(title ? `https://inshortsapi.vercel.app/news?category=${title}` : 'https://inshortsapi.vercel.app/news?category=all');
                 setNews(response.data.data);
+              console.log(news)
             } catch (error) {
                 console.error('Error fetching news:', error);
             }
         };
 
-        if (title) {
-            fetchData();
-        }
+        fetchData();
     }, [title]);
-    const contextValue = { news, setNews };
-    return <NewsContext.Provider value={contextValue}>{children}</NewsContext.Provider>; // newsContext yerine NewsContext kullanın
-};
+    console.log(news)
 
-export default NewsContext;
+    return (
+        <div>
+            <CategorialNews news={news} />
+            <DetailedNews news={news} />
+        </div>
+    );
+}
+export default DataComp;

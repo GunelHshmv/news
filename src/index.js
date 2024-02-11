@@ -7,11 +7,11 @@ import { NewsProvider } from "./ContextData";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-      {/* <NewsProvider> */}
+      <NewsProvider>
         <Router>
           <App />
         </Router>
-      {/* </NewsProvider> */}
+      </NewsProvider>
   </React.StrictMode>
 );
 
