@@ -7,7 +7,7 @@ import { NewsProvider } from '../ContextData';
 const Routing = () => {
     return (
         <div>
-            <Routes>
+            <Routes >
                 <Route path='/news/:title/:index' element={<DetailedNews />} />
                 <Route path='/news/:title' element={<NewsProvider><CategorialNews/></NewsProvider>} />
                 <Route path='/news' exact element={<CategorialNews />} />

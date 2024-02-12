@@ -8,7 +8,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
       <NewsProvider>
-        <Router>
+        <Router basename="/news">
           <App />
         </Router>
       </NewsProvider>
