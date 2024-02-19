@@ -1,4 +1,3 @@
-import DataComp from './DataComp';
 import Routing from './Routing';
 function App() {
   return (
