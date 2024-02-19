@@ -7,7 +7,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
-import { CardActionArea, CardActions } from '@mui/material';
+import { Button, CardActionArea, CardActions } from '@mui/material';
 import Divider from '@mui/material/Divider';
 import { format, parse} from 'date-fns';
 import styles from '../../Styles'
@@ -49,7 +49,11 @@ const CategorialNews = () => {
           <div style={styles.iconsStyle}><PersonOutlineIcon/> 
           <span style={{paddingLeft:"4px"}}>{item.author}</span>
           </div>
+          
         </div>
+        <div style={{display:"flex",alignItems:'center'}}>
+          <span style={{position:"absolute",right:"24px"}}><Button variant='outlined' color='primary'><b>MORE</b></Button></span>
+          </div>
       </CardActions>
     </Card>
     </Link>

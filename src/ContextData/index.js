@@ -16,7 +16,6 @@ export const NewsProvider = ({ children }) => {
                 console.error('Error fetching news:', error);
             }
         };
-
             fetchData();
     }, [title]);
     const contextValue = { news, setNews };

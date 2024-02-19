@@ -62,6 +62,7 @@ const styles = {
     cardactionStyles: {
       position: "absolute",
       top: "540px",
+      width:"100%",
     },
     cardIcpnsStyles: {
       display: "flex",
