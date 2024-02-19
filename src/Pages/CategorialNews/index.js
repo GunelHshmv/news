@@ -21,7 +21,6 @@ const CategorialNews = () => {
       <div style={styles.pageContainerStyle}>
       {
       news.map((item,index)=>(
-    <Link to={title?`/news/${title}/${index}`:`/news/all/${index}`}>
     <Card style={styles.cardStyle} >
       <CardActionArea>
         <CardMedia
@@ -52,11 +51,14 @@ const CategorialNews = () => {
           
         </div>
         <div style={{display:"flex",alignItems:'center'}}>
-          <span style={{position:"absolute",right:"24px"}}><Button variant='outlined' color='primary'><b>MORE</b></Button></span>
+          <span style={{position:"absolute",right:"24px"}}>
+    <Link to={title?`/news/${title}/${index}`:`/news/all/${index}`}>
+            <Button variant='outlined' color='primary'><b>MORE</b></Button>
+    </Link>
+          </span>
           </div>
       </CardActions>
     </Card>
-    </Link>
     ))}
 </div>
     </PageContainer>
